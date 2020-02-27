@@ -1,0 +1,6 @@
+select CUSTOMER.LastName, CUSTOMER.FirstName, CUSTOMER.Phone 
+from CUSTOMER
+JOIN INVOICE ON CUSTOMER.CustomerID=INVOICE.CustomerID
+JOIN INVOICE_ITEM ON INVOICE_ITEM.InvoiceNumber=INVOICE.InvoiceNumber
+where INVOICE_ITEM.Item='Dress Shirt'
+order by CUSTOMER.LastName ASC, CUSTOMER.FirstName DESC
